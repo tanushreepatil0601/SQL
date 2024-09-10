@@ -99,13 +99,14 @@ SELECT city,state FROM cust_dimen;
 SELECT *
 FROM cust_dimen
 WHERE state = 'West Bengal';
+
 -- Select list of customers that ordered more than 20 units of products.
- SELECT * 
- FROM market_fact_full
- WHERE Order_Quantity >20;
+ SELECT *
+ FROM cust_dimen
+ WHERE Order_quantity > 20;
 
 --------------------------------------------------------------------------------------------------
--- Operators
+                                                    -- Operators
 -- 1. Arithmetic Operators
 -- Calculate the total revenue after discount for each sale
 SELECT sales - (sales*Discount)AS 'TOTAL REVENUE AFTER DISCOUNT'  -- alias(is used to give another name for column)
@@ -121,27 +122,44 @@ WHERE Order_Quantity >100;
 -- Suppose you want to find orders from the orders_dimen table that were placed on a specific date with a specific priority level.
 SELECT *
 FROM orders_dimen
-WHERE order_date = '2010-10-13'  -- Replace with your specific date
-AND priority_level = 'Low';      -- Replace with your specific priority level
+WHERE order_date = '2012-02-12'  -- Replace with your specific date
+AND Order_priority = 'Critical';      -- Replace with your specific priority level
+
+-- suppose you want to find product_sub_category from the products_dimen table that belongs to either office supplies or have manufacture id
+SELECT Product_sub_category
+FROM prod_dimen
+WHERE Product_category = 'Office supplies'
+OR Manu_Id IS NULL;
 
 -- If you want to retrieve customers from the cust_dimen table who are either from the city 'Trivandrum' or from the state 'Kerala':
-
+SELECT Customer_Name
+FROM Cust_dimen
+WHERE City = 'Trivandrum'
+OR state = 'Kerala';
 
 -- Suppose you want to display the customers who all belong to southern India so instead of writing multiple WHERE clauses you can make use of the IN operator.
-
+SELECT *
+FROM cust_dimen
+WHERE state IN ("Andra pradesh","Karnataka","Kerala","Tamil Nadu","Telangana");
 ----------------------------------------------------------------------------------------------------------
 
 -- LIKE and Wildcards Examples
 
 -- Suppose you want to find orders where the order IDs start with "ORD":
-
+SELECT Ord_id
+FROM orders_dimen
+WHERE Ord_id LIKE 'ORD%';
 
 -- List the orders with '_5' in their order ids and shipping costs between 10 and 15.
+SELECT *
+FROM market_fact_full
+WHERE Ord_id LIKE '%\_5%' AND Shipping_Cost >= 10 AND Shipping_Cost <=15;
+-- WHERE Ord_id LIKE '%\_5%' AND Shipping_Cost between 10 AND 15;(ANOTHER WAY TO WRITE)
 
 
 -- To find any order IDs in the orders_dimen table that start with 'O' and have either 'r' or 'd' as the second character:
 
---To get products whose sub-categories start with either "O", "T", or "F":
+-- To get products whose sub-categories start with either "O", "T", or "F":
 
 -------------------------------------------------------------------------------------------------------
 
@@ -165,7 +183,7 @@ AND priority_level = 'Low';      -- Replace with your specific priority level
 
 
 -- MAX Function Example
- --Null Values
+ -- Null Values
 
  -- throws an error as aggregate functions directly cannot be used in the where clause
 
@@ -173,8 +191,8 @@ AND priority_level = 'Low';      -- Replace with your specific priority level
 
 -- SQL Clauses
 -- 1. Group By Clause
---Count City wise customers
- --throw an error
+-- Count City wise customers
+ -- throw an error
 
 -- 2. Order By Clause
 
@@ -203,52 +221,52 @@ AND priority_level = 'Low';      -- Replace with your specific priority level
 -- 2. UPPER()
 
 
---3. LOWER()
+-- 3. LOWER()
 
---4. LENGTH()
+-- 4. LENGTH()
 
 
---Example: Suppose names of all the customers are in UPPER case and you want to convert them in title case
+-- Example: Suppose names of all the customers are in UPPER case and you want to convert them in title case
 
 
 ----------------------------------------------------------------------------------------------------------
 
---Date-Time functions
---Example 1: In which month were the most orders shipped? Here, we will count the number of shipments per month and then identify the month with the maximum shipments.
+-- Date-Time functions
+-- Example 1: In which month were the most orders shipped? Here, we will count the number of shipments per month and then identify the month with the maximum shipments.
 
 
---Example 2: Which month and year combination saw the most number of critical orders?
+-- Example 2: Which month and year combination saw the most number of critical orders?
 
 
 -- NOW Function
- --returns the current date and time
+ -- returns the current date and time
 
 ---------------------------------------------------------------------------------------------------------
 
---Regular Expressions
+-- Regular Expressions
 -- Example: Suppose you want to find names of all the customers who have a string ‘car’ in their name.
 
 
 -- Example: Find the names of all the customers beginning with a,b,c or d and ending with ‘er’.
 
---REGEXP_REPLACE
---Example: Suppose we want to remove all digits from the Customer_Name field in the cust_dimen table:
+-- REGEXP_REPLACE
+-- Example: Suppose we want to remove all digits from the Customer_Name field in the cust_dimen table:
 
 
---REGEXP_SUBSTR
---Example:  Imagine you want to extract the first word from the Customer_Name field in the cust_dimen table. Assuming a word is any sequence of characters at the beginning of the string before a space:
+-- REGEXP_SUBSTR
+-- Example:  Imagine you want to extract the first word from the Customer_Name field in the cust_dimen table. Assuming a word is any sequence of characters at the beginning of the string before a space:
 
 --------------------------------------------------------------------------------------------------
 
---Nested Queries
---Example 1: Find the total sales for each order and compare it with the average sales for all orders.
+-- Nested Queries
+-- Example 1: Find the total sales for each order and compare it with the average sales for all orders.
 
 
 
---Example 2: Find details of customers who have made orders above $5000.
+-- Example 2: Find details of customers who have made orders above $5000.
 
 
---Example 3: Get the average sales per customer, then select customers with average sales above a certain threshold.
+-- Example 3: Get the average sales per customer, then select customers with average sales above a certain threshold.
 
 --------------------------------------------------------------------------------------------------------------
 -- CTEs
