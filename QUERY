@@ -1,7 +1,6 @@
 Consider the employees table having the following columns.
 
 Employees
-
 Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
 
 SELECT COUNT(*) AS totalEmployees
@@ -13,7 +12,23 @@ FROM employees;
 
 
 Description
-Write a query to return the email ids of all the employees in the increasing order of their employee numbers.
+Write a query to return the email ids of all the employees in the increasing order of their employee numbers
+
 SELECT email
 FROM employees
 ORDER BY employeeNumber ASC;
+
+
+
+
+
+Write a query to return the employee number, first name and last name of all the employees.
+Order the employees in the alphabetical order of their first names.
+
+SELECT employeeNumber, firstName, lastName
+FROM employees
+ORDER BY firstName ASC;
+
+
+
+
