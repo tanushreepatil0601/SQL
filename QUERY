@@ -1,5 +1,4 @@
 Consider the employees table having the following columns.
-
 Employees
 Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
 
@@ -21,7 +20,7 @@ ORDER BY employeeNumber ASC;
 
 
 
-
+Description
 Write a query to return the employee number, first name and last name of all the employees.
 Order the employees in the alphabetical order of their first names.
 
