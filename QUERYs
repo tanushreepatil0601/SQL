@@ -8,8 +8,6 @@ FROM employees;
 
 
 
-
-
 Description
 Write a query to return the email ids of all the employees in the increasing order of their employee numbers
 
