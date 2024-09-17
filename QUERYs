@@ -43,6 +43,7 @@ In case the deadlock still persists, higher marks in physics are given priority.
 Write a query that will provide the email for the top 3 students? explain this question
 
 code=
+
 SELECT email_id
 FROM upgrad.marks
 ORDER BY 
