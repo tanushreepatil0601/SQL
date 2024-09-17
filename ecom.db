@@ -32,6 +32,5 @@ FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
 
- 
 total revenue = total sales(if sales is in motenory or units)
-total revenue = price * sales(if sales is in units sold/ quantity)
+total revenue = price * sales(if sales is in units sold/ quantity);
