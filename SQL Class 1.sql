@@ -40,7 +40,8 @@ FOREIGN KEY (product_id) REFERENCES products(product_id)
  product names in the products table.*/
  
  ALTER TABLE products MODIFY product_name VARCHAR(255);
- 
+
+WORKING
 --  SELECT >> FROM >> WHERE >> GROUP BY >> HAVING >> ORDER BY
 -- EXECUTION >> FROM >> JOIN >> WHERE >> GOUP BY >> HAVING >> SELECT
 
