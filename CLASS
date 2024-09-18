@@ -16,3 +16,16 @@ FROM cust_dimen;
 -- 3. LOWER()
 SELECT lower(Customer_Name)
  FROM cust_dimen;
+
+
+-- 4. LENGTH()
+SELECT Customer_Name, length(Customer_Name)
+FROM cust_dimen;
+
+-- 5. SUBSTRING(),LOCATE()
+SELECT substring(Customer_Name, 1, locate(' ',Customer_Name)-1) AS first_Name
+FROM cust_dimen;
+
+-- Last name
+SELECT Customer_Name, substring(Customer_Name,  locate( ' ' ,Customer_Name)+1) AS Last_Name
+FROM cust_dimen;
