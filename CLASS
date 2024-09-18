@@ -11,3 +11,8 @@ FROM cust_dimen;
 -- 2. UPPER()
 SELECT upper(Customer_Name)
 FROM cust_dimen;
+
+
+-- 3. LOWER()
+SELECT lower(Customer_Name)
+ FROM cust_dimen;
