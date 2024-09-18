@@ -6,3 +6,8 @@ FROM Prod_dimen;
 -- concate state and city name
 SELECT State, City ,concat(State,"_",City) AS Location
 FROM cust_dimen;
+
+
+-- 2. UPPER()
+SELECT upper(Customer_Name)
+FROM cust_dimen;
