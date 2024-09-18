@@ -55,6 +55,9 @@ LIMIT 3;                                      -- Select top 3 students
 
 
 
+-- concate state and city name
+SELECT State, City ,concat(State,"_",City) AS Location
+FROM cust_dimen; 
 
 
 
