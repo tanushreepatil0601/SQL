@@ -56,7 +56,4 @@ LIMIT 3;                                      -- Select top 3 students
 
 
 
--- Concat()
-SELECT Product_Category,Product_Sub_Category, concat(Product_Category,"_",Product_Sub_Category) AS Product_Name
-FROM Prod_dimen;
 
