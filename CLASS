@@ -76,3 +76,9 @@ SELECT Customer_Name
 FROM cust_dimen
 WHERE Customer_Name regexp 'car';
 
+
+
+-- Example: Find the names of all the customers beginning with a,b,c or d and ending with ‘er’.
+SELECT Customer_Name
+FROM cust_dimen
+WHERE Customer_Name regexp '^[abcd].*er$';
