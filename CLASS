@@ -40,3 +40,12 @@ FROM cust_dimen;
  ORDER BY Ship_count DESC
  LIMIT 1;
 
+
+-- Example 2: Which month and year combination saw the most number of critical orders?
+SELECT count(Ord_id) AS order_count , MONTH(Order_Date) AS order_month, year(Order_Date) AS order_year
+ FROM orders_dimen
+ WHERE Order_Priority= 'Critical'
+ GROUP BY order_month, order_year
+ ORDER BY order_count DESC
+ LIMIT 1;
+
