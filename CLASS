@@ -68,3 +68,11 @@ SELECT Customer_Name, CONCAT(
     LOWER(SUBSTRING(Customer_Name,locate (' ',Customer_Name) +2 ))
 ) AS title_case_name
 FROM cust_dimen;
+
+
+-- Regular Expressions
+-- Example: Suppose you want to find names of all the customers who have a string ‘car’ in their name.
+SELECT Customer_Name
+FROM cust_dimen
+WHERE Customer_Name regexp 'car';
+
