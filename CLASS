@@ -29,3 +29,14 @@ FROM cust_dimen;
 -- Last name
 SELECT Customer_Name, substring(Customer_Name,  locate( ' ' ,Customer_Name)+1) AS Last_Name
 FROM cust_dimen;
+
+
+
+-- Date-Time functions
+-- Example 1: In which month were the most orders shipped? Here, we will count the number of shipments per month and then identify the month with the maximum shipments.
+ SELECT count(Order_ID) AS Ship_count, MONTH(Ship_Date) AS shipping_month
+ FROM shipping_dimen
+ GROUP BY shipping_month
+ ORDER BY Ship_count DESC
+ LIMIT 1;
+
