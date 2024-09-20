@@ -116,3 +116,11 @@ SELECT ord_id, sum(sales),
 FROM market_fact_full 
 GROUP BY ord_id;
 
+-- Example 2: Find details of customers who have made orders above $5000.
+
+ SELECT *
+ FROM cust_dimen
+ WHERE Cust_id IN (SELECT Cust_id
+FROM market_fact_full 
+GROUP BY Cust_id
+HAVING SUM(sales) > 5000);
