@@ -143,3 +143,16 @@ FROM market_fact_full
 WHERE Profit < 0
 ORDER BY Profit DESC
 LIMIT 5;
+
+
+-- Query named as least_losses
+WITH least_losses AS (
+SELECT Prod_id,Product_Base_Margin, Profit
+FROM market_fact_full
+WHERE Profit < 0
+ORDER BY Profit DESC
+LIMIT 5
+)
+SELECT *
+FROM least_losses
+WHERE Product_Base_Margin =(SELECT max(Product_Base_Margin) FROM least_losses);
