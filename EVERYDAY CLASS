@@ -108,3 +108,11 @@ FROM cust_dimen;
 SELECT regexp_substr(Customer_Name,'[^ ]+$') AS last_name
 FROM cust_dimen;
 
+
+-- Nested Queries
+-- Example 1: Find the total sales for each order and compare it with the average sales for all orders.
+SELECT ord_id, sum(sales),
+(SELECT avg(sales) FROM market_fact_full) AS Average_sales
+FROM market_fact_full 
+GROUP BY ord_id;
+
