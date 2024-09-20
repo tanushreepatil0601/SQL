@@ -57,8 +57,6 @@ SELECT Ord_id, NOW() AS current_datetime
 FROM orders_dimen;
 
 
-
-
 -- Example: Suppose names of all the customers are in UPPER case and you want to convert them in title case
 SELECT Customer_Name, CONCAT(
     (SUBSTRING(Customer_Name, 1, 1)), 
