@@ -103,3 +103,8 @@ FROM cust_dimen;
 SELECT regexp_substr(Customer_Name,'^[ %]+') AS middle_name
 FROM cust_dimen;
 
+
+-- last name
+SELECT regexp_substr(Customer_Name,'[^ ]+$') AS last_name
+FROM cust_dimen;
+
