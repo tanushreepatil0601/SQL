@@ -132,3 +132,14 @@ WHERE Cust_id IN (SELECT cust_id
 FROM market_fact_full
 GROUP BY cust_id
 HAVING AVG(Sales) > 2000);
+
+
+-- CTEs(Common table expression )
+
+-- 1. Find the 5 products which resulted in the least losses. Which product had the highest product base
+-- margin among these?
+SELECT Prod_id,Product_Base_Margin, Profit
+FROM market_fact_full
+WHERE Profit < 0
+ORDER BY Profit DESC
+LIMIT 5;
