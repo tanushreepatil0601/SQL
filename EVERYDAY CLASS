@@ -94,4 +94,8 @@ SELECT Regexp_replace( Ord_id, '[a-zA-Z]','') AS Ord_id_Cleaned
 FROM orders_dimen;
 
 
+-- REGEXP_SUBSTR
+-- Example:  Imagine you want to extract the first word from the Customer_Name field in the cust_dimen table. Assuming a word is any sequence of characters at the beginning of the string before a space:
+SELECT regexp_substr(Customer_Name,'^[^ ]+') AS First_name
+FROM cust_dimen;
 
