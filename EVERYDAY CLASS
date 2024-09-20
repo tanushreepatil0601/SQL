@@ -124,3 +124,13 @@ GROUP BY ord_id;
 FROM market_fact_full 
 GROUP BY Cust_id
 HAVING SUM(sales) > 5000);
+
+
+-- Example 3: Get the average sales per customer, then select customers with average sales above a certain threshold.
+
+SELECT*
+FROM cust_dimen
+WHERE Cust_id IN (SELECT cust_id
+FROM market_fact_full
+GROUP BY cust_id
+HAVING AVG(Sales) > 2000);
