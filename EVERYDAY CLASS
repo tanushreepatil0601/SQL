@@ -156,3 +156,16 @@ LIMIT 5
 SELECT *
 FROM least_losses
 WHERE Product_Base_Margin =(SELECT max(Product_Base_Margin) FROM least_losses);
+
+
+-- HOMEWORK 2. Find all low-priority orders made in the month of April. Out of them, how many were made in the first half of the month?
+WITH Low_Priority_Orders AS (
+SELECT Ord_id,Order_Date
+FROM orders_dimen
+WHERE Order_Priority = 'LOW'
+AND MONTH(Order_Date) = 4
+)
+SELECT COUNT(*) AS Orders_First_Half_April
+FROM Low_Priority_Orders
+WHERE DAY(Order_Date) <= 15;
+ 
