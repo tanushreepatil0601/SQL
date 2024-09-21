@@ -169,3 +169,9 @@ SELECT COUNT(*) AS Orders_First_Half_April
 FROM Low_Priority_Orders
 WHERE DAY(Order_Date) <= 15;
  
+
+SELECT c.name AS Customers
+FROM Customers c
+LEFT JOIN Orders o
+ON c.id = o.customerId
+WHERE o.id IS NULL;
