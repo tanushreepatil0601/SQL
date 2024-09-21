@@ -209,3 +209,14 @@ Write a query to retrieve the total number of employees, do the aliasing of coun
 
 SELECT COUNT(*) AS totalEmployees
 FROM employees;
+
+
+
+
+Description
+Given an employees table with the following columns:
+EmployeeS
+Write a query to retrieve the full names of all the employees along with their employee numbers.
+
+SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullName
+FROM Employees;
