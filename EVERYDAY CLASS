@@ -199,3 +199,13 @@ After a tie, the next ranking number should be the next consecutive integer valu
 Return the result table ordered by score in descending order.
 
 
+
+
+
+Description
+Consider the employees table having the following columns.
+Employees
+Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
+
+SELECT COUNT(*) AS totalEmployees
+FROM employees;
