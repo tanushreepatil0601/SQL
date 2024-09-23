@@ -70,3 +70,13 @@ Write a query to retrieve the total number of employees, do the aliasing of coun
 code=
 SELECT COUNT(*) AS totalEmployees
 FROM employees;
+
+
+
+Description
+Write a query to return the email ids of all the employees in the increasing order of their employee numbers
+
+code=
+SELECT email
+FROM employees
+ORDER BY employeeNumber ASC;
