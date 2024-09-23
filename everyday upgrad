@@ -61,3 +61,12 @@ Write a query to retrieve the full names of all the employees along with their e
 SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullName
 FROM Employees;
 
+
+Description
+Consider the employees table having the following columns.
+Employees
+Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
+
+code=
+SELECT COUNT(*) AS totalEmployees
+FROM employees;
