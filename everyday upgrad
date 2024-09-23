@@ -80,3 +80,13 @@ code=
 SELECT email
 FROM employees
 ORDER BY employeeNumber ASC;
+
+
+Description
+Write a query to return the employee number, first name and last name of all the employees.
+Order the employees in the alphabetical order of their first names.
+
+code=
+SELECT employeeNumber, firstName, lastName
+FROM employees
+ORDER BY firstName ASC;
