@@ -109,3 +109,12 @@ ORDER BY
     mathematics DESC,                         -- If tied, higher marks in mathematics
     physics DESC                              -- If still tied, higher marks in physics
 LIMIT 3;                                      -- Select top 3 students
+
+
+
+Given an employees table with the following columns:
+Employees
+Write a query to retrieve the full names of all the employees along with their employee numbers.
+
+SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullName
+FROM Employees;
