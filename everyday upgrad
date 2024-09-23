@@ -118,3 +118,12 @@ Write a query to retrieve the full names of all the employees along with their e
 
 SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullName
 FROM Employees;
+
+
+Description
+Write a query to return the employee number, first name and last name of all the employees.
+Order the employees in the alphabetical order of their first names.
+
+SELECT employeeNumber, firstName, lastName
+FROM employees
+ORDER BY firstName;
