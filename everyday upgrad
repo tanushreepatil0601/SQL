@@ -22,3 +22,13 @@ GROUP BY Student_id
 HAVING AVG(Marks) > (SELECT AVG(Marks) FROM marks);
 
 
+
+Description
+Consider a table named 'father' storing the details of all father-son pairs in a residential society.
+Write a code to determine the number of grandfather-grandson pairs in the society. 
+For the purpose of the problem, consider grandson as son of one's son.
+Note that the table stores data in the following form﻿
+
+SELECT COUNT(*) AS grandfather_grandson_pairs
+FROM father f1
+JOIN father f2 ON f1.son_id = f2.father_id;
