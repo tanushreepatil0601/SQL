@@ -127,3 +127,6 @@ Order the employees in the alphabetical order of their first names.
 SELECT employeeNumber, firstName, lastName
 FROM employees
 ORDER BY firstName;
+
+Description
+Write a query to return the email ids of all the employees in the increasing order of their employee numbers.
