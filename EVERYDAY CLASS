@@ -240,3 +240,10 @@ FROM prod_dimen p
 JOIN market_fact_full m
 ON p.Prod_id = m.Prod_id;
 
+
+-- 2. Find the shipment date, mode and profit made for every single order.
+SELECT Ord_id,Ship_Date, Ship_Mode,Profit
+FROM shipping_dimen s
+JOIN market_fact_full m
+ON s.Ship_id = m.Ship_id;
+
