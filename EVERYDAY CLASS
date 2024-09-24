@@ -232,3 +232,11 @@ FROM market_fact_full;
 SELECT *
 FROM Order_info
 WHERE PROFIT > 1000;
+
+
+-- 1. Print the product categories and subcategories along with the profits made for each order.
+SELECT  Ord_id,Product_Category,Product_Sub_Category,Profit
+FROM prod_dimen p
+JOIN market_fact_full m
+ON p.Prod_id = m.Prod_id;
+
