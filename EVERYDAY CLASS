@@ -220,3 +220,15 @@ Write a query to retrieve the full names of all the employees along with their e
 
 SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullName
 FROM Employees;
+
+
+-- Views
+
+-- 1. Create a view to display the sales amounts, the number of orders, profits made and the shipping costs of all orders. Query it to return all orders which have a profit of greater than 1000.
+CREATE view order_info as
+SELECT Ord_id, Sales,Order_Quantity,Profit,Shipping_Cost
+FROM market_fact_full; 
+
+SELECT *
+FROM Order_info
+WHERE PROFIT > 1000;
