@@ -272,3 +272,14 @@ USING (Cust_id)
 GROUP BY Customer_Name
 ORDER BY Total_order DESC 
 LIMIT 1;
+
+
+-- 5. Selling office supplies was more profitable in Delhi as compared to Patna. True or false?
+  SELECT Product_Category, SUM(profit),city
+  FROM market_fact_full
+  INNER JOIN cust_dimen
+  USING (cust_id) 
+  INNER JOIN prod_dimen
+  USING (prod_id)
+  WHERE product_category = 'office supplies' AND (city = 'delhi' OR city = 'bangalore') 
+  GROUP BY city;
