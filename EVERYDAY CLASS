@@ -324,3 +324,23 @@ FROM manu
 LEFT JOIN prod_dimen
 ON manu.Manu_ID = prod_dimen.Manu_ID
 GROUP BY Manu_Name;
+
+
+-- Views with Joins
+
+-- 4. Create a view to display the customer names, segments, sales, product categories and
+-- subcategories of all orders. Use it to print the names and segments of those customers who ordered more than 20
+-- pens and art supplies products.
+
+CREATE VIEW order_details AS
+SELECT Ord_id, Customer_Name,Customer_Segment,Sales,Order_Quantity ,Product_Category,Product_Sub_Category
+FROM cust_dimen
+JOIN market_fact_full
+USING (Cust_id)
+JOIN prod_dimen
+USING (Prod_id);
+
+SELECT Customer_Name,Customer_Segment,Order_Quantity,Product_Sub_Category
+FROM order_details
+WHERE Order_Quantity >20 AND Product_Sub_Category ="PENS & ART SUPPLIES";
+
