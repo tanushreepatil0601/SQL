@@ -292,3 +292,13 @@ JOIN orders USING (customer_id)
 GROUP BY Customer_Name
 ORDER BY SUM(order_quantity) DESC
 LIMIT 1;
+
+
+-- 7. Print the three most common products.
+SELECT Product_Sub_Category,SUM(Order_Quantity)
+FROM prod_dimen
+JOIN market_fact_full
+USING (Prod_id)
+GROUP BY Product_Sub_Category
+ORDER BY SUM(Order_Quantity) DESC
+LIMIT 3;
