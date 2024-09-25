@@ -311,3 +311,8 @@ FROM prod_dimen
 LEFT JOIN manu
 USING (Manu_id);
 
+
+SELECT Product_Sub_Category,Manu_Name
+FROM prod_dimen
+RIGHT JOIN manu
+USING (Manu_id);
