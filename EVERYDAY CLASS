@@ -262,3 +262,13 @@ ON c.Cust_id = m.Cust_id
 GROUP BY Customer_Name
 ORDER BY Total_order DESC 
 LIMIT 1;
+
+
+-- alternate way
+SELECT Customer_Name, SUM(Order_Quantity) AS Total_order
+FROM cust_dimen c
+JOIN market_fact_full m
+USING (Cust_id) 
+GROUP BY Customer_Name
+ORDER BY Total_order DESC 
+LIMIT 1;
