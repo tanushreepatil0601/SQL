@@ -316,3 +316,11 @@ SELECT Product_Sub_Category,Manu_Name
 FROM prod_dimen
 RIGHT JOIN manu
 USING (Manu_id);
+
+-- Right Join
+-- Displaying the names of all the manufacturers with the total number of products supplied by them.
+SELECT Manu_Name, COUNT(Prod_id) AS Total_Products
+FROM manu
+LEFT JOIN prod_dimen
+ON manu.Manu_ID = prod_dimen.Manu_ID
+GROUP BY Manu_Name;
