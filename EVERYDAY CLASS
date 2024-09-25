@@ -283,3 +283,12 @@ LIMIT 1;
   USING (prod_id)
   WHERE product_category = 'office supplies' AND (city = 'delhi' OR city = 'bangalore') 
   GROUP BY city;
+
+
+-- 6. Print the name of the customer with the maximum number of orders.
+SELECT Customer_Name
+FROM cust_dimen
+JOIN orders USING (customer_id)
+GROUP BY Customer_Name
+ORDER BY SUM(order_quantity) DESC
+LIMIT 1;
