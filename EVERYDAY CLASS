@@ -247,3 +247,10 @@ FROM shipping_dimen s
 JOIN market_fact_full m
 ON s.Ship_id = m.Ship_id;
 
+
+-- 3. Print the shipment mode, profit made and product category for each product.
+SELECT Prod_id,Ship_Mode, Profit, Product_Category
+FROM shipping_dimen s
+JOIN market_fact_full m
+ON o.Prod_id = p.Prod_id;
+
