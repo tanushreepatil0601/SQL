@@ -254,3 +254,11 @@ FROM shipping_dimen s
 JOIN market_fact_full m
 ON o.Prod_id = p.Prod_id;
 
+-- 4. Which customer ordered the most number of products?
+SELECT Customer_Name, SUM(Order_Quantity) AS Total_order
+FROM cust_dimen c
+JOIN market_fact_full m
+ON c.Cust_id = m.Cust_id
+GROUP BY Customer_Name
+ORDER BY Total_order DESC 
+LIMIT 1;
