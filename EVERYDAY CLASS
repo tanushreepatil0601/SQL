@@ -302,3 +302,12 @@ USING (Prod_id)
 GROUP BY Product_Sub_Category
 ORDER BY SUM(Order_Quantity) DESC
 LIMIT 3;
+
+
+-- Outer Join
+-- 1. Display the products sold by all the manufacturers using both inner and outer joins.
+SELECT Product_Sub_Category,Manu_Name
+FROM prod_dimen
+LEFT JOIN manu
+USING (Manu_id);
+
