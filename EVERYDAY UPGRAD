@@ -195,3 +195,5 @@ After some time, you realize that the books table should also include a column f
 Task: Write the SQL command to add a genre column to the books table.
 ALTER TABLE books
  ADD genre VARCHAR(50);
+
+
