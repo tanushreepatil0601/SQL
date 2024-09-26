@@ -187,3 +187,11 @@ After a review, you decide to remove all books published before the year 2000 fr
 Task: Write the SQL command to delete all records of books published before the year 2000.
 DELETE FROM books
  WHERE  published_year < '2000-01-01';
+
+
+Description
+After some time, you realize that the books table should also include a column for the genre of the book
+, which should be a string up to 50 characters.
+Task: Write the SQL command to add a genre column to the books table.
+ALTER TABLE books
+ ADD genre VARCHAR(50);
