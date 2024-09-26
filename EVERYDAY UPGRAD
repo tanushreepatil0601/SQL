@@ -166,3 +166,17 @@ Task: Write the SQL command to add a genre column to the books table.
 
  ALTER TABLE books
  ADD genre VARCHAR(50);
+
+
+Description
+You are tasked with creating a new table for managing book information in a library system.
+The table should be named books and include columns for book_id (integer and primary key), 
+title (string up to 255 characters), author (string up to 100 characters), and published_year (datetime).
+Task: Write the SQL command to create this table.
+
+CREATE TABLE books (
+ book_id INT PRIMARY KEY,
+ title VARCHAR(255),
+ author VARCHAR(100),
+ published_year DATETIME
+ );
