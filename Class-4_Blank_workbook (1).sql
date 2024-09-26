@@ -94,35 +94,93 @@ ON s.Ship_id = m.Ship_id;
 
 -- 3. Print the shipment mode, profit made and product category for each product.
 
+SELECT Prod_id,Ship_Mode, Profit, Product_Category
+FROM shipping_dimen s
+JOIN market_fact_full m
+ON o.Prod_id = p.Prod_id;
 
 -- 4. Which customer ordered the most number of products?
-SELECT Customer_Name
-FROM cust_dimen
-
+SELECT Customer_Name, SUM(Order_Quantity) AS Total_order
+FROM cust_dimen c
+JOIN market_fact_full m
+ON c.Cust_id = m.Cust_id
+GROUP BY Customer_Name
+ORDER BY Total_order DESC 
+LIMIT 1;
 
 -- alternate way
-
+SELECT Customer_Name, SUM(Order_Quantity) AS Total_order
+FROM cust_dimen c
+JOIN market_fact_full m
+USING (Cust_id) 
+GROUP BY Customer_Name
+ORDER BY Total_order DESC 
+LIMIT 1;
 
 -- 5. Selling office supplies was more profitable in Delhi as compared to Patna. True or false?
-
+  SELECT Product_Category, SUM(profit),city
+  FROM market_fact_full
+  INNER JOIN cust_dimen
+  USING (cust_id) 
+  INNER JOIN prod_dimen
+  USING (prod_id)
+  WHERE product_category = 'office supplies' AND (city = 'delhi' OR city = 'bangalore') 
+  GROUP BY city;
 
 -- 6. Print the name of the customer with the maximum number of orders.
+SELECT Customer_Name
+FROM cust_dimen
+JOIN market_fact_full
+USING (customer_id)
+GROUP BY Customer_Name
+ORDER BY SUM(order_quantity) DESC
+LIMIT 1; .
 
 
 -- 7. Print the three most common products.
-
-
+SELECT Product_Sub_Category,SUM(Order_Quantity)
+FROM prod_dimen
+JOIN market_fact_full
+USING (Prod_id)
+GROUP BY Product_Sub_Category
+ORDER BY SUM(Order_Quantity) DESC
+LIMIT 3;
 -- -----------------------------------------------------------------------------------------------------------------
 -- Outer Join
 -- 1. Display the products sold by all the manufacturers using both inner and outer joins.
-
+SELECT Product_Sub_Category,Manu_Name
+FROM prod_dimen
+LEFT JOIN manu
+USING (Manu_id);
+  
+SELECT Product_Sub_Category,Manu_Name
+FROM prod_dimen
+RIGHT JOIN manu
+USING (Manu_id);
+ 
+ -- Right Join
 -- Displaying the names of all the manufacturers with the total number of products supplied by them.
-
--- Right Join
-
+SELECT Manu_Name, COUNT(Prod_id) AS Total_Products
+FROM manu
+LEFT JOIN prod_dimen
+ON manu.Manu_ID = prod_dimen.Manu_ID
+GROUP BY Manu_Name;
 --------------------------------------------------------------------------------------------------------------
 -- Views with Joins
 
 -- 4. Create a view to display the customer names, segments, sales, product categories and
 -- subcategories of all orders. Use it to print the names and segments of those customers who ordered more than 20
 -- pens and art supplies products.
+
+CREATE VIEW order_details AS
+SELECT Ord_id, Customer_Name,Customer_Segment,Sales,Order_Quantity ,Product_Category,Product_Sub_Category
+FROM cust_dimen
+JOIN market_fact_full
+USING (Cust_id)
+JOIN prod_dimen
+USING (Prod_id);
+
+SELECT Customer_Name,Customer_Segment,Order_Quantity,Product_Sub_Category
+FROM order_details
+WHERE Order_Quantity >20 AND Product_Sub_Category ="PENS & ART SUPPLIES";
+
