@@ -197,6 +197,8 @@ ALTER TABLE books
  ADD genre VARCHAR(50);
 
 
+
+Description
 List the rounded average film lengths for each film category.
 Arrange the values in the decreasing order of the average film lengths.
 
