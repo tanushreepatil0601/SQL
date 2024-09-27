@@ -1,4 +1,5 @@
- Description
+
+Description
 Consider the employees table having the following columns.
 Employees
 Write a query to retrieve the total number of employees, do the aliasing of count as totalEmployees.
@@ -221,3 +222,14 @@ FROM home, away
 WHERE home.opponent = away.opponent
 AND home.goals_scored > home.goals_conceded
 AND away.goals_scored > away.goals_conceded;
+
+
+Employees with Even-Numbered Office Codes
+Description
+Write a query to retrieve the extensions and office codes of all the employees having an even-numbered office code.
+Arrange them in the alphabetical order of their first names.
+
+SELECT extension, officeCode
+FROM employees
+WHERE officeCode  % 2 = 0
+ORDER BY firstName ;
