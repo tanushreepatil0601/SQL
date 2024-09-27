@@ -197,3 +197,12 @@ ALTER TABLE books
  ADD genre VARCHAR(50);
 
 
+List the rounded average film lengths for each film category.
+Arrange the values in the decreasing order of the average film lengths.
+
+SELECT ROUND(AVG(film.length)),category.name
+FROM film, film_category, category
+WHERE film.film_id = film_category.film_id
+AND film_category.category_id = category.category_id
+GROUP BY category.name
+ORDER BY AVG(film.length) DESC;
