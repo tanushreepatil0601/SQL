@@ -254,7 +254,14 @@ FROM employees
 WHERE officeCode BETWEEN 2 AND 4
 ORDER BY firstName;
 
+Description
+Write a query to retrieve the email addresses of all the employees who have an office code of 6 or report to employees with employee number '1088'.
+Arrange them in the reverse alphabetical order of their first names.
 
+SELECT email
+FROM employees
+WHERE officeCode = 6 OR employeeNumber = '1088'
+ORDER BY firstName DESC;
 
 
 
