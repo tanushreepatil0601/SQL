@@ -208,3 +208,16 @@ WHERE film.film_id = film_category.film_id
 AND film_category.category_id = category.category_id
 GROUP BY category.name
 ORDER BY AVG(film.length) DESC;
+
+
+Description
+Consider a table named 'home' storing Arsenal football club's performance in the league at home in 2003-04 season,
+while the table 'away' stores Arsenal's performance away in the same season.﻿
+﻿Note that a team is awarded three points for a win, one for a draw and zero for a loss.
+Write a query to determine the number of teams against whom Arsenal won all the available six points.
+
+SELECT COUNT(*) 
+FROM home, away
+WHERE home.opponent = away.opponent
+AND home.goals_scored > home.goals_conceded
+AND away.goals_scored > away.goals_conceded;
