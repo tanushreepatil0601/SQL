@@ -244,3 +244,17 @@ SELECT extension, officeCode
 FROM employees
 WHERE officeCode  % 2 = 1
 ORDER BY firstName ;
+
+Description
+Write a query to retrieve all the details of all the employees who have an office code from 2 to 4.
+Arrange them in the alphabetical order of their first names. Please click on the sample output to view it clearly.
+
+SELECT employeeNumber,lastName,firstName,extension,email,officeCode,reportsTo,jobTitle
+FROM employees
+WHERE officeCode BETWEEN 2 AND 4
+ORDER BY firstName;
+
+
+
+
+
