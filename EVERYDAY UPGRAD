@@ -233,3 +233,14 @@ SELECT extension, officeCode
 FROM employees
 WHERE officeCode  % 2 = 0
 ORDER BY firstName ;
+
+
+Employees with odd-Numbered Office Codes
+Description
+Write a query to retrieve the extensions and office codes of all the employees having an even-numbered office code.
+Arrange them in the alphabetical order of their first names.
+
+SELECT extension, officeCode
+FROM employees
+WHERE officeCode  % 2 = 1
+ORDER BY firstName ;
