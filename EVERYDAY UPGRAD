@@ -292,3 +292,10 @@ SELECT firstName,lastName
  WHERE officeCode = 4
  ORDER BY lastName;
 
+Description
+Write a query to retrieve the entire data of all the employees from the employees table.
+Arrange them in the alphabetical order of their first names. Please click on the sample output to view it clearly.
+
+SELECT *
+FROM employees
+ORDER BY firstName;
