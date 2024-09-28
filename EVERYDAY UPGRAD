@@ -282,3 +282,9 @@ SELECT firstName,lastName
  FROM employees
  WHERE officeCode = 4
  ORDER BY lastName;
+
+Description
+Write a query to retrieve the first names and last names of all the employees having an office code of 4
+. Arrange them in the alphabetical order of their last names.
+
+
