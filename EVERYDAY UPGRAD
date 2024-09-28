@@ -299,3 +299,9 @@ Arrange them in the alphabetical order of their first names. Please click on the
 SELECT *
 FROM employees
 ORDER BY firstName;
+
+Description
+Write a query to retrieve all the details of employees who don't report to anyone. 
+Arrange them in the increasing order of their employee numbers. Please click on the sample output to view it clearly.
+
+
