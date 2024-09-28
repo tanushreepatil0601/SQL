@@ -263,6 +263,7 @@ FROM employees
 WHERE officeCode = 6 OR employeeNumber = '1088'
 ORDER BY firstName DESC;
 
+
 Description
 Write a query to retrieve the email addresses of all the employees who have an office code of 6 and report to employees with code '1088'. 
 Arrange these employees in the increasing order of their employee numbers.
