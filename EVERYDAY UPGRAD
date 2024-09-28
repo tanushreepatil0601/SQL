@@ -304,4 +304,7 @@ Description
 Write a query to retrieve all the details of employees who don't report to anyone. 
 Arrange them in the increasing order of their employee numbers. Please click on the sample output to view it clearly.
 
-
+SELECT *
+FROM employees
+WHERE reportsTo IS NULL
+ORDER BY employeeNumber;
