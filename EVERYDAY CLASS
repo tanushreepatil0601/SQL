@@ -87,6 +87,7 @@ WHERE Customer_Name regexp '^[abcd].*er$';
 
 -- REGEXP_REPLACE
 -- Example: Suppose we want to remove all digits from the Customer_Name field in the cust_dimen table:
+
 SELECT Regexp_replace(Customer_Name, '[0-9]','') AS Customer_Name_Cleaned
 FROM cust_dimen;
 
