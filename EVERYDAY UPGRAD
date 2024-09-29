@@ -33,7 +33,6 @@ FROM father f1
 JOIN father f2 ON f1.son_id = f2.father_id;
 
 
-
 Description
 Consider the 'upgrad' schema having a 'marks' table containing the following columns.
 application_id|email_id|physics|chemistry|mathematics
