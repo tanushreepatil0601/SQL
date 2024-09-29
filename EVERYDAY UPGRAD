@@ -22,7 +22,6 @@ GROUP BY Student_id
 HAVING AVG(Marks) > (SELECT AVG(Marks) FROM marks);
 
 
-
 Description
 Consider a table named 'father' storing the details of all father-son pairs in a residential society.
 Write a code to determine the number of grandfather-grandson pairs in the society. 
