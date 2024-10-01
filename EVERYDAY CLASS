@@ -357,3 +357,14 @@ SELECT
 	RANK() OVER (ORDER BY Sales DESC) AS Sales_rank
 FROM market_fact_full;
 select * froM MARKET_FACT_FULL;
+
+
+-- Rank Orders by Profit within Each Customer Segment
+-- Here, we aim to see how each order ranks in terms of profit within each customer segment: 
+SELECT 
+	Customer_Segment,
+	Profit,
+    RANK() OVER (PARTITION BY  Customer_Segment ORDER BY Profit DESC) AS Customer_rank
+    FROM market_fact_full
+    JOIN cust_dimen
+    USING(Cust_id);
