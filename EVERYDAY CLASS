@@ -391,3 +391,14 @@ SELECT
 	FROM  market_fact_full
 	JOIN shipping_dimen
 	USING(Ship_id);
+
+
+-- Identify the most frequent shoppers by ranking customers based on the number of orders they have placed.
+ SELECT Cust_id,
+Customer_Name,
+COUNT(Ord_id),
+RANK() OVER (ORDER BY COUNT(Ord_id)DESC) AS cust_rank
+FROM market_fact_full
+JOIN cust_dimen
+USING(Cust_id)
+GROUP BY Cust_id,Customer_Name;
