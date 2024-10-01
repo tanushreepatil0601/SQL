@@ -423,3 +423,10 @@ DENSE_RANK() OVER (PARTITION BY Product_Category ORDER BY Sales) AS product_wise
 FROM market_fact_full
 JOIN prod_dimen
 USING (Prod_id);
+
+
+-- Calculate the dense rank of each order based on the order quantity
+SELECT Ord_id,
+Order_Quantity,
+DENSE_RANK() OVER (PARTITION BY Ord_id ORDER BY Order_Quantity) AS order_rank
+FROM market_fact_full;
