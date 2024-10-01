@@ -413,3 +413,13 @@ FROM market_fact_full
 JOIN cust_dimen
 USING(Cust_id) limit 10;
 
+
+-- Rank Functions - II
+--  Rank products within each category based on their total sales, ensuring that ties receive the same rank and there are no gaps in ranking numbers.
+SELECT Prod_id,
+Product_Category,
+Sales,
+DENSE_RANK() OVER (PARTITION BY Product_Category ORDER BY Sales) AS product_wise_sales_rank
+FROM market_fact_full
+JOIN prod_dimen
+USING (Prod_id);
