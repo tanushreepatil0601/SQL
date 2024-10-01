@@ -430,3 +430,11 @@ SELECT Ord_id,
 Order_Quantity,
 DENSE_RANK() OVER (PARTITION BY Ord_id ORDER BY Order_Quantity) AS order_rank
 FROM market_fact_full;
+
+
+-- Calculate the percentile rank of each order based on the order quantity.
+SELECT Ord_id,
+Order_Quantity,
+DENSE_RANK() OVER (ORDER BY Order_Quantity) AS order_rank,
+ROUND ((PERCENT_RANK() OVER ( ORDER BY Order_Quantity)),2)AS percent_order_rank
+FROM market_fact_full;
