@@ -330,6 +330,7 @@ ON manu.Manu_ID = prod_dimen.Manu_ID
 GROUP BY Manu_Name;
 
 
+
 -- Views with Joins
 
 -- 4. Create a view to display the customer names, segments, sales, product categories and
@@ -438,3 +439,5 @@ Order_Quantity,
 DENSE_RANK() OVER (ORDER BY Order_Quantity) AS order_rank,
 ROUND ((PERCENT_RANK() OVER ( ORDER BY Order_Quantity)),2)AS percent_order_rank
 FROM market_fact_full;
+
+
