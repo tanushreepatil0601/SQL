@@ -368,3 +368,14 @@ SELECT
     FROM market_fact_full
     JOIN cust_dimen
     USING(Cust_id);
+
+
+-- If we want to rank the products based on the order quantity, irrespective of the specific orders:
+SELECT
+	Ord_id,
+	Order_Quantity,
+    Product_Sub_Category,
+    RANK() OVER (PARTITION BY Product_Sub_Category ORDER BY Order_Quantity DESC) product_rank
+	FROM prod_dimen
+    JOIN market_fact_full
+    USING(Prod_id);
