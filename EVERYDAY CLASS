@@ -402,3 +402,14 @@ FROM market_fact_full
 JOIN cust_dimen
 USING(Cust_id)
 GROUP BY Cust_id,Customer_Name;
+
+
+-- Example: Top 10 sales order from a customer using Rank on sales attribute
+SELECT Cust_id,
+Customer_Name,
+Sales,
+RANK() OVER(PARTITION BY Cust_id ORDER BY Sales DESC) AS sales_rank
+FROM market_fact_full
+JOIN cust_dimen
+USING(Cust_id) limit 10;
+
