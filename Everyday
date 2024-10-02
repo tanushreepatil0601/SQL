@@ -45,3 +45,13 @@ SELECT *
 FROM productlines
 LIMIT 5;
 
+
+
+-- Questions:
+
+-- Q-6: Insert the following two rows in the 'customers' table.
+-- (495,'Diecast Collectables','Franco','Valarie','Boston','MA','51003','USA','1188',85100),
+-- (496,'Kelly\'s Gift Shop','Snowden','Tony','Auckland  ','NULL','NULL','New Zealand','1612',110000)
+
+INSERT INTO `customers` VALUES (495,'Diecast Collectables','Franco','Valarie','Boston','MA','51003','USA','1188',85100),
+							(496,'Kelly\'s Gift Shop','Snowden','Tony','Auckland  ','NULL','NULL','New Zealand','1612',110000);
