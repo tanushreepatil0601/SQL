@@ -32,3 +32,9 @@ LIMIT 5;
 SELECT * 
 FROM orderdetails
 LIMIT 5;
+
+
+-- Print the first 5 entries of "products" tables.
+SELECT * 
+FROM products
+LIMIT 5;
