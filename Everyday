@@ -13,3 +13,9 @@ LIMIT 5;
 SELECT * 
 FROM customers
 LIMIT 5;
+
+
+-- Print the first 5 entries of "orders" tables.
+  SELECT * 
+FROM orders
+LIMIT 5;
