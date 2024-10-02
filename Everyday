@@ -55,3 +55,8 @@ LIMIT 5;
 
 INSERT INTO `customers` VALUES (495,'Diecast Collectables','Franco','Valarie','Boston','MA','51003','USA','1188',85100),
 							(496,'Kelly\'s Gift Shop','Snowden','Tony','Auckland  ','NULL','NULL','New Zealand','1612',110000);
+
+
+
+-- Q-7: In the "employees" table there are some entries where 'SR' is written instead of 'Sales Rep' where office code is equal to 4.
+-- Update the 'employees' table by inserting a job title as 'Sales Rep' where office code is equal to 4.
