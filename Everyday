@@ -21,6 +21,13 @@ FROM orders
 LIMIT 5;
 
 
+-- Print the first 5 entries of "payments" tables.
+SELECT * 
+FROM payments
+LIMIT 5;
+
+
+
 -- Print the first 5 entries of "orderdetails" tables.
 SELECT * 
 FROM orderdetails
