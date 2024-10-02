@@ -58,5 +58,16 @@ INSERT INTO `customers` VALUES (495,'Diecast Collectables','Franco','Valarie','B
 
 
 
+-- Insert the following entry into the employee table.
+insert into employees 
+values
+(1102, 'Bondur', 'Gerard', 'x5408', 'gbondur@classicmodelcars.com', 4, '1056', 'Sale Manager(EMEA)');
+
+
+
 -- Q-7: In the "employees" table there are some entries where 'SR' is written instead of 'Sales Rep' where office code is equal to 4.
 -- Update the 'employees' table by inserting a job title as 'Sales Rep' where office code is equal to 4.
+
+
+
+
