@@ -7,3 +7,9 @@
 SELECT *
 FROM offices
 LIMIT 5;
+
+
+-- Print the first 5 entries of "customers" tables.
+SELECT * 
+FROM customers
+LIMIT 5;
