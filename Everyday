@@ -38,3 +38,10 @@ LIMIT 5;
 SELECT * 
 FROM products
 LIMIT 5;
+
+
+-- Print the first 5 entries of "productlines" tables.
+SELECT * 
+FROM productlines
+LIMIT 5;
+
