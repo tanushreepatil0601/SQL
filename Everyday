@@ -1,1 +1,4 @@
-
+-- Print the first 5 entries of "employees" tables.
+ SELECT *
+ FROM employees
+ LIMIT 5;
