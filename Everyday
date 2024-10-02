@@ -65,6 +65,7 @@ values
 
 
 
+
 -- Q-7: In the "employees" table there are some entries where 'SR' is written instead of 'Sales Rep' where office code is equal to 4.
 -- Update the 'employees' table by inserting a job title as 'Sales Rep' where office code is equal to 4.
 
