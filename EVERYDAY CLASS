@@ -481,3 +481,9 @@ FROM market_fact_full;
 
 
 -- Partitioning
+-- Example 1: Average Sales by Customer Segment
+SELECT Customer_Segment, ROUND(AVG(Sales),2) AS avg_sales
+FROM market_fact_full
+JOIN cust_dimen
+USING (Cust_id)
+GROUP BY Customer_Segment;
