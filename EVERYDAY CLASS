@@ -473,6 +473,7 @@ FROM cust_dimen;
 
 
 -- Assign a sequence number to all shipments based on their shipping cost, from lowest to highest.
+
 SELECT Ship_id,Shipping_Cost,
 ROW_NUMBER() OVER (ORDER BY Shipping_Cost) AS ship_num
 FROM market_fact_full;
