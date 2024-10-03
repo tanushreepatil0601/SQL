@@ -506,3 +506,23 @@ COUNT(Ord_id) OVER(PARTITION BY State) AS ord_by_state
 FROM market_fact_full
 JOIN cust_dimen
 USING (Cust_id);
+
+
+-- Home Assignment
+-- Example 3: Maximum Sale by Product Category
+SELECT Prod_id,Product_Category, round(Sales),
+round(MAX(Sales) OVER (PARTITION BY Product_Category))AS max_sales
+FROM market_fact_full
+JOIN prod_dimen
+USING (Prod_id);
+
+
+
+-- Product Sales Rank within Categories:
+-- This query ranks products based on sales within each product category, which is helpful for inventory and marketing strategies.
+SELECT Prod_id,Product_Category,Product_Sub_Category,round(Sales),
+RANK() OVER (PARTITION BY  Product_Category , Product_Sub_Category ORDER BY Sales) AS pro_rank
+FROM market_fact_full
+JOIN prod_dimen
+USING (Prod_id);
+
