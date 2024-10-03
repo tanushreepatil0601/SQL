@@ -442,3 +442,8 @@ FROM market_fact_full;
 
 
  -- Rank Functions - III
+
+-- Assign a unique number to each order in descending order of sales.
+SELECT Ord_id, round(Sales,2),
+ROW_NUMBER() OVER (ORDER BY Sales DESC) AS row_num
+FROM market_fact_full;
