@@ -448,3 +448,9 @@ FROM market_fact_full;
 SELECT Ord_id, round(Sales,2),
 ROW_NUMBER() OVER (ORDER BY Sales DESC) AS row_num
 FROM market_fact_full;
+
+
+-- Number customers sequentially within each state based on their customer ID.
+SELECT Cust_id,State,
+ROW_NUMBER() OVER (PARTITION BY State  ORDER BY Cust_id DESC) AS cust_seq
+FROM cust_dimen;
