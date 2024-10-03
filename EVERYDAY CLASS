@@ -500,8 +500,9 @@ GROUP BY Customer_Segment;
 
 
 -- Example 2: Count Orders by State
+
 SELECT State,Ord_id,
- COUNT(Ord_id) OVER(PARTITION BY State) AS ord_by_state
+COUNT(Ord_id) OVER(PARTITION BY State) AS ord_by_state
 FROM market_fact_full
 JOIN cust_dimen
 USING (Cust_id);
