@@ -477,3 +477,7 @@ FROM cust_dimen;
 SELECT Ship_id,Shipping_Cost,
 ROW_NUMBER() OVER (ORDER BY Shipping_Cost) AS ship_num
 FROM market_fact_full;
+
+
+
+-- Partitioning
