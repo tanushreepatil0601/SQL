@@ -455,3 +455,10 @@ FROM market_fact_full;
 SELECT Cust_id,State,
 ROW_NUMBER() OVER (PARTITION BY State  ORDER BY Cust_id DESC) AS cust_seq
 FROM cust_dimen;
+
+
+-- Assign a unique sequence number to all orders based on their date, from oldest to newest.
+SELECT Ord_id,Order_Date,
+ROW_NUMBER() OVER ( ORDER BY Order_Date) AS ord_seq
+FROM orders_dimen;
+
