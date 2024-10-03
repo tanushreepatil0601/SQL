@@ -466,6 +466,7 @@ FROM orders_dimen;
 
 
 -- Assign a unique sequence number to all customers based on their names in alphabetical order.
+
 SELECT Customer_Name,
 ROW_NUMBER() OVER ( ORDER BY Customer_Name) AS cust_name
 FROM cust_dimen;
