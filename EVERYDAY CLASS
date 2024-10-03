@@ -488,3 +488,11 @@ FROM market_fact_full
 JOIN cust_dimen
 USING (Cust_id)
 GROUP BY Customer_Segment;
+
+
+-- Example 3:Average Sales for Customer Segment along with each Cust_id
+  SELECT Cust_id,Customer_Segment, round(sales,0),
+  round(AVG(sales) OVER(PARTITION BY Customer_Segment),0) AS seg_avg
+  FROM market_fact_full
+  JOIN cust_dimen
+  USING (Cust_id);
