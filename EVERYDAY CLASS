@@ -441,3 +441,4 @@ ROUND ((PERCENT_RANK() OVER ( ORDER BY Order_Quantity)),2)AS percent_order_rank
 FROM market_fact_full;
 
 
+ -- Rank Functions - III
