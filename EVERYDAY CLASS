@@ -517,7 +517,6 @@ JOIN prod_dimen
 USING (Prod_id);
 
 
-
 -- Product Sales Rank within Categories:
 -- This query ranks products based on sales within each product category, which is helpful for inventory and marketing strategies.
 SELECT Prod_id,Product_Category,Product_Sub_Category,round(Sales),
