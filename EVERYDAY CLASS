@@ -61,7 +61,7 @@ FROM orders_dimen;
 
 -- Example: Suppose names of all the customers are in UPPER case and you want to convert them in title case
 SELECT Customer_Name, CONCAT(
-    (SUBSTRING(Customer_Name, 1, 1)), 
+ (SUBSTRING(Customer_Name, 1, 1)), 
     LOWER(SUBSTRING(Customer_Name, 2, locate(' ',Customer_Name)-1)), 
     ' ',
     (SUBSTRING(Customer_Name, locate(' ' ,Customer_Name)+1,1)),
