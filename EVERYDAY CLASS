@@ -355,15 +355,11 @@ SELECT
 
 
 -- Suppose we want to find out how each order ranks by shipping cost within each shipping mode:
-SELECT
-    Ord_id,
-    Ship_Mode,
-    Shipping_Cost,
-    Ship_id,
-	RANK() OVER (PARTITION BY Ship_Mode ORDER BY Shipping_Cost DESC) AS order_rank
-	FROM  market_fact_full
-	JOIN shipping_dimen
-	USING(Ship_id);
+SELECT Ord_id,Ship_Mode, Shipping_Cost,Ship_id,
+RANK() OVER (PARTITION BY Ship_Mode ORDER BY Shipping_Cost DESC) AS order_rank
+FROM  market_fact_full
+JOIN shipping_dimen
+USING(Ship_id);
 
 
 -- Identify the most frequent shoppers by ranking customers based on the number of orders they have placed.
