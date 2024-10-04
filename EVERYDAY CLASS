@@ -195,8 +195,6 @@ SELECT COUNT(*) AS totalEmployees
 FROM employees;
 
 
-
-
 Description
 Given an employees table with the following columns:
 EmployeeS
