@@ -26,6 +26,7 @@ FROM cust_dimen;
 SELECT substring(Customer_Name, 1, locate(' ',Customer_Name)-1) AS first_Name
 FROM cust_dimen;
 
+
 -- Last name
 SELECT Customer_Name, substring(Customer_Name,  locate( ' ' ,Customer_Name)+1) AS Last_Name
 FROM cust_dimen;
