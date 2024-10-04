@@ -352,10 +352,8 @@ WHERE Order_Quantity >20 AND Product_Sub_Category ="PENS & ART SUPPLIES";
 
 -- Rank Functions - I
 -- Rank orders based on their total sales amount.
-SELECT 
-	Ord_ID, 
-	Sales,
-	RANK() OVER (ORDER BY Sales DESC) AS Sales_rank
+SELECT Ord_ID, Sales,
+RANK() OVER (ORDER BY Sales DESC) AS Sales_rank
 FROM market_fact_full;
 select * froM MARKET_FACT_FULL;
 
