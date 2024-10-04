@@ -53,7 +53,6 @@ SELECT count(Ord_id) AS order_count , MONTH(Order_Date) AS order_month, year(Ord
  LIMIT 1;
 
 
-
 -- NOW Function
  -- returns the current date and time
 SELECT Ord_id, NOW() AS current_datetime 
