@@ -182,10 +182,6 @@ ON c.id = o.customerId
 WHERE o.id IS NULL;
 
 
-
-
-
-
 Description
 Consider the employees table having the following columns.
 Employees
