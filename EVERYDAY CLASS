@@ -184,7 +184,6 @@ WHERE o.id IS NULL;
 
 
 description
-
 Table: Scores
 
 +-------------+---------+
