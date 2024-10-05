@@ -324,12 +324,9 @@ Write a query to retrieve the individual and total order amounts for each order 
 Order the values in the increasing order of the order numbers. For similar order numbers, 
 arrange the individual order amounts in the decreasing order
 
-SELECT 
-    orderNumber,
-    (quantityOrdered * priceEach) AS individualOrderAmount,
-    SUM(quantityOrdered * priceEach) OVER (PARTITION BY orderNumber) AS totalOrderAmount
-FROM 
-    orderDetails
+SELECT orderNumber,(quantityOrdered * priceEach) AS individualOrderAmount,
+SUM(quantityOrdered * priceEach) OVER (PARTITION BY orderNumber) AS totalOrderAmount
+FROM  orderDetails
 ORDER BY 
     orderNumber ASC, 
     individualOrderAmount DESC;
