@@ -43,10 +43,8 @@ Write a query that will provide the email for the top 3 students?
 
  SELECT email_id
 FROM marks
-ORDER BY 
-    (physics + chemistry + mathematics) DESC,  
-    mathematics DESC,                         
-    physics DESC                             
+ORDER BY (physics + chemistry + mathematics) DESC, mathematics DESC,                         
+ physics DESC                             
 LIMIT 3;
 
 
