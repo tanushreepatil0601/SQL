@@ -144,7 +144,6 @@ CREATE TABLE books (
  );
 
 
-
 Description
 After a review, you decide to remove all books published before the year 2000 from the books table. 
 (Assuming we added back the published_year column for this scenario.)
