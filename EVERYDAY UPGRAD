@@ -319,7 +319,6 @@ FROM products;
 
 
 
-
 Individual and Total Order Amounts
 Description
 Given a table named orderdetails with the following columns
@@ -338,3 +337,6 @@ FROM
 ORDER BY 
     orderNumber ASC, 
     individualOrderAmount DESC;
+
+
+
