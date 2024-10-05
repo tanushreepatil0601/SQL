@@ -318,12 +318,11 @@ RANK() OVER (ORDER BY quantityInStock DESC) AS quantityRank
 FROM products;
 
 
+
+
 Individual and Total Order Amounts
 Description
 Given a table named orderdetails with the following columns
-
-
-
 Orderdetails
 There are some orders that have multiple order amounts corresponding to the same order.
 Write a query to retrieve the individual and total order amounts for each order along with the order numbers.
