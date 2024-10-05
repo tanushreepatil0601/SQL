@@ -15,8 +15,7 @@ Marks      : Storing the marks obtained by the student in the particular course
 Write a query to determine the spread of the marks of the student having average marks greater than the overall average.
 Spread is defined as the difference between the highest and lowest marks obtained by the student.
 
-SELECT Student_id, 
-       (MAX(Marks) - MIN(Marks)) AS Marks
+SELECT Student_id, (MAX(Marks) - MIN(Marks)) AS Marks
 FROM marks
 GROUP BY Student_id
 HAVING AVG(Marks) > (SELECT AVG(Marks) FROM marks);
