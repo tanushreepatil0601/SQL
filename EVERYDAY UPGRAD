@@ -308,3 +308,8 @@ WHERE reportsTo IS NULL
 ORDER BY employeeNumber;
 
 
+
+
+Given a table named products with the following columns
+Write a query to retrieve the ranks of the products in decreasing order of their quantities in stock.
+
