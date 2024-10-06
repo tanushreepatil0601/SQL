@@ -333,3 +333,9 @@ ORDER BY  orderNumber ASC, individualOrderAmount DESC;
  Description
 Write a query to calculate the running total of sales for each product, ordered by date.
 
+
+SELECT date,product,sales_price,
+ SUM(sales_price) OVER (PARTITION BY product ORDER BY date) AS running_total
+FROM sales_table
+ORDER BY  product, date;
+
