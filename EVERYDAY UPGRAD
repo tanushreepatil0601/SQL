@@ -330,3 +330,6 @@ ORDER BY  orderNumber ASC, individualOrderAmount DESC;
 
 
 
+ Description
+Write a query to calculate the running total of sales for each product, ordered by date.
+
