@@ -355,3 +355,8 @@ Write a query to find the total sales for each product, ordered by product ratin
 SELECT date,product,sales_price,product_rating,
 SUM(sales_price) OVER (PARTITION BY product ORDER BY product_rating) AS total_sales
 FROM sales_table;
+
+
+Description
+Write a query to find how the average rating of each product is affected based on each row ordered by date.
+
