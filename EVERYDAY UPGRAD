@@ -344,3 +344,6 @@ ORDER BY  product, date;
 Description
  Write a query to find and calculate the average sales price for each product rating, across all products.
 
+SELECT DISTINCT product_rating,
+ AVG(sales_price) OVER (PARTITION BY product_rating) AS avg_sales_price
+ FROM sales_table;
