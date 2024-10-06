@@ -360,3 +360,6 @@ FROM sales_table;
 Description
 Write a query to find how the average rating of each product is affected based on each row ordered by date.
 
+ SELECT  date,product,sales_price,product_rating,
+ AVG(product_rating) OVER (PARTITION BY  product ORDER BY date) AS avg_rating
+ FROM sales_table;
