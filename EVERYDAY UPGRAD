@@ -339,3 +339,8 @@ SELECT date,product,sales_price,
 FROM sales_table
 ORDER BY  product, date;
 
+
+
+Description
+ Write a query to find and calculate the average sales price for each product rating, across all products.
+
