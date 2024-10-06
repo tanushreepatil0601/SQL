@@ -347,3 +347,8 @@ Description
 SELECT DISTINCT product_rating,
  AVG(sales_price) OVER (PARTITION BY product_rating) AS avg_sales_price
  FROM sales_table;
+
+
+Description
+Write a query to find the total sales for each product, ordered by product rating.
+
