@@ -506,3 +506,16 @@ USING (Prod_id);
 SELECT sale_ID,sale_date,amount,
 	SUM(amount) OVER (ORDER BY Sale_date RANGE BETWEEN INTERVAL  1 DAY PRECEDING AND INTERVAL 1 DAY  FOLLOWING ) AS moving_sum
   FROM Sales;
+
+
+
+-- This query calculates the running total and 7-day moving average of shipping costs
+
+USE market_star_schema;
+
+SELECT market_fact_full.ship_id, Shipping_Cost,
+SUM(Shipping_Cost) OVER (ORDER BY Ship_Date ROWS BETWEEN  UNBOUNDED PRECEDING AND CURRENT ROW ) AS running_total,
+AVG(Shipping_Cost) OVER (ORDER BY Ship_Date ROWS BETWEEN  6 PRECEDING AND CURRENT ROW ) AS moving_sum
+FROM market_fact_full
+JOIN shipping_dimen
+USING(Ship_id)
