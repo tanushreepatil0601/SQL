@@ -519,3 +519,10 @@ AVG(Shipping_Cost) OVER (ORDER BY Ship_Date ROWS BETWEEN  6 PRECEDING AND CURREN
 FROM market_fact_full
 JOIN shipping_dimen
 USING(Ship_id)
+
+
+
+--  using window specifications w1 and w2, respectively.
+WINDOW
+		w1 as (ORDER BY Ship_Date ROWS BETWEEN  UNBOUNDED PRECEDING AND CURRENT ROW ),
+        w2 as (ORDER BY Ship_Date ROWS BETWEEN  6 PRECEDING AND CURRENT ROW ); 
