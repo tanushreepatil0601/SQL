@@ -528,7 +528,6 @@ WINDOW
         w2 as (ORDER BY Ship_Date ROWS BETWEEN  6 PRECEDING AND CURRENT ROW ); 
 
 
-
 -- This SQL query calculates the sum of sales for the current row and the two following rows for each customer.
 SELECT Cust_id,ROUND(Sales,2),
 	ROUND(SUM(sales) OVER (ORDER BY Cust_id ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING),2) AS cust_sales
