@@ -493,3 +493,9 @@ FROM market_fact_full
 JOIN prod_dimen
 USING (Prod_id);
 
+
+-- Below SQL queies selects sale_ID, sale_date, amount, and calculates the moving sum of amount using a window function frame.
+-- Using rows
+  SELECT sale_ID,sale_date,amount,
+	SUM(amount) OVER (ORDER BY Sale_ID ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING ) AS moving_sum
+  FROM Sales;
