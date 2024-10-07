@@ -499,3 +499,10 @@ USING (Prod_id);
   SELECT sale_ID,sale_date,amount,
 	SUM(amount) OVER (ORDER BY Sale_ID ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING ) AS moving_sum
   FROM Sales;
+
+
+
+-- Using range
+SELECT sale_ID,sale_date,amount,
+	SUM(amount) OVER (ORDER BY Sale_date RANGE BETWEEN INTERVAL  1 DAY PRECEDING AND INTERVAL 1 DAY  FOLLOWING ) AS moving_sum
+  FROM Sales;
