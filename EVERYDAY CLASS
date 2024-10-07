@@ -521,7 +521,6 @@ JOIN shipping_dimen
 USING(Ship_id)
 
 
-
 --  using window specifications w1 and w2, respectively.
 WINDOW
 		w1 as (ORDER BY Ship_Date ROWS BETWEEN  UNBOUNDED PRECEDING AND CURRENT ROW ),
