@@ -531,3 +531,9 @@ WINDOW
 SELECT Cust_id,ROUND(Sales,2),
 	ROUND(SUM(sales) OVER (ORDER BY Cust_id ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING),2) AS cust_sales
     FROM market_fact_full;
+
+
+-- Below SQL query selects EmpCode, EmpName, JoiningDate, and calculates the End date using the LEAD function.
+SELECT EmpCode, EmpName,JoiningDate,
+LEAD (JoiningDate) OVER (ORDER  BY JoiningDate) AS Emp_date
+FROM employees;
