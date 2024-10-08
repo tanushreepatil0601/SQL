@@ -507,7 +507,6 @@ SELECT sale_ID,sale_date,amount,
   FROM Sales;
 
 
-
 -- This query calculates the running total and 7-day moving average of shipping costs
 
 USE market_star_schema;
