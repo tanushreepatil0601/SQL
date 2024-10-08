@@ -534,7 +534,6 @@ SELECT Cust_id,ROUND(Sales,2),
 
 
 
-
 -- This query computes the difference in days between consecutive joining dates. This facilitates analysis of durations
 -- between successive employee joinings.
 
