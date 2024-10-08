@@ -543,11 +543,11 @@ LEAD (JoiningDate) OVER (ORDER  BY JoiningDate) AS End_date,
 DATEDIFF(LEAD (JoiningDate , 1)OVER (ORDER BY JoiningDate), JoiningDate) AS EmpoloyeeDuration
 FROM employees;
 
+
 -- Below SQL query selects EmpCode, EmpName, JoiningDate, and calculates the End date using the LEAD function.
 SELECT EmpCode, EmpName,JoiningDate,
 LEAD (JoiningDate) OVER (ORDER  BY JoiningDate) AS Emp_date
 FROM employees;
-
 
 
 -- Below SQL query selects EmpCode, EmpName, JoiningDate, and calculates the End date using the LAG function and computes the Difference.
@@ -555,3 +555,6 @@ SELECT EmpCode, EmpName,JoiningDate,
 LAG (JoiningDate) OVER (ORDER  BY JoiningDate) AS End_date,
 DATEDIFF(LAG (JoiningDate , 1)OVER (ORDER BY JoiningDate), JoiningDate) AS EmpoloyeeDuration
 FROM employees;
+
+
+
