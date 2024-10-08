@@ -533,6 +533,16 @@ SELECT Cust_id,ROUND(Sales,2),
     FROM market_fact_full;
 
 
+
+
+-- This query computes the difference in days between consecutive joining dates. This facilitates analysis of durations
+-- between successive employee joinings.
+
+SELECT EmpCode, EmpName,JoiningDate,
+LEAD (JoiningDate) OVER (ORDER  BY JoiningDate) AS End_date,
+DATEDIFF(LEAD (JoiningDate , 1)OVER (ORDER BY JoiningDate), JoiningDate) AS EmpoloyeeDuration
+FROM employees;
+
 -- Below SQL query selects EmpCode, EmpName, JoiningDate, and calculates the End date using the LEAD function.
 SELECT EmpCode, EmpName,JoiningDate,
 LEAD (JoiningDate) OVER (ORDER  BY JoiningDate) AS Emp_date
