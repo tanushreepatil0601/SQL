@@ -572,3 +572,8 @@ CASE
     ELSE 'Low'
 END as discount_category
 FROM market_fact_full;
+
+
+
+-- Write a query that categorizes profits as 'Loss' for negative profits,
+'Low Profit' for profits between 0 and 800, and 'High Profit' for profits greater than 800.
