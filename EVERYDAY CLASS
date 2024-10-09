@@ -597,3 +597,8 @@ WHERE
 		WHEN year(order_date) = 2012 THEN Order_Priority IN ('High', 'Critical')
         ELSE Order_Priority = 'Critical'
 END;
+
+
+
+-- Write a query to categorize product base margins as 'Low Margin' (<=35%),
+'Medium Margin' (36% - 55%), and 'High Margin' (>55%).
