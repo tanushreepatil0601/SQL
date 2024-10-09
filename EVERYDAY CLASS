@@ -590,3 +590,10 @@ FROM market_fact_full;
 
 
 -- Select orders where the priority is either 'Critical' or 'High' if the year is 2012, otherwise select only 'Critical' for other years.
+
+SELECT * FROM orders_dimen
+WHERE
+	CASE
+		WHEN year(order_date) = 2012 THEN Order_Priority IN ('High', 'Critical')
+        ELSE Order_Priority = 'Critical'
+END;
