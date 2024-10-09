@@ -602,3 +602,5 @@ END;
 
 -- Write a query to categorize product base margins as 'Low Margin' (<=35%),
 'Medium Margin' (36% - 55%), and 'High Margin' (>55%).
+
+SELECT distinct(ship_mode) FROM shipping_dimen order by ship_mode;
