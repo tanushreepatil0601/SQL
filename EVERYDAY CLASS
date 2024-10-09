@@ -586,3 +586,7 @@ CASE
     ELSE 'High Profit'
 END as profit_category
 FROM market_fact_full;
+
+
+
+-- Select orders where the priority is either 'Critical' or 'High' if the year is 2012, otherwise select only 'Critical' for other years.
