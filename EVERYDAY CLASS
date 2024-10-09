@@ -554,3 +554,11 @@ FROM employees;
 
 
 
+-- Write a query to display customer segments, but replace 'Corporate' with 'Business' and leave other segments unchanged.
+
+SELECT cust_id, customer_name,
+CASE
+	WHEN customer_segment = 'Corporate' THEN 'Business'
+    ELSE customer_segment
+END AS adj_cusotmer_segment
+FROM cust_dimen;
